@@ -1,18 +1,29 @@
+/*作業13:請撰寫一個程式，保險公司提供企業團體意外保險與個人意外保險，
+企業團體意外保險要填寫的資料包括以下項目：
+企業名稱、員工姓名、投保額度。
+個人意外保險要填寫的資料包括以下項目：個人姓名、個人電話、投保額度。
+請將上述兩者建成結構體。
+然後再用共用體組合起來，
+由鍵盤選擇 1.企業團體意外保險, 2.個人意外保險，
+然後再依選擇輸入相關資料後，再將資料輸出。 
+
+*呂家明 3a713229
+*/ 
 #include<stdio.h>
 #include<stdlib.h>
 
 struct Comp_insurance{
-	char comp_name[20];
-	char employee_name[20];
-	int comp_insured_amount;
+	char comp_name[20];   //公司名稱 
+	char employee_name[20];//公司員工 
+	int comp_insured_amount;//保險金額 
 }; 
 struct Personal_insurance{
-	char name[20];
-	char cellphone[11];
-	int per_insured_amount;
+	char name[20]; //個人姓名 
+	char cellphone[11];//個人手機 
+	int per_insured_amount;//保險金額 
 };
 union Mydata{
-	struct Comp_insurance comp_insurance;
+	struct Comp_insurance comp_insurance;//共用記憶體 
 	struct Personal_insurance personal_insurance; 
 }mydata;
 
